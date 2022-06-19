@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_main_dialog_background">
+
+    <TextView
+        android:id="@+id/activity_main_dialog_txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="최근 갔던 경로"
+        android:textColor="@color/anza_string_default"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activity_main_dialog_txt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="출발역"
+        android:textColor="@color/anza_blue"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_dialog_txt_trans"
+        app:layout_constraintEnd_toStartOf="@+id/activity_main_dialog_txt_trans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_dialog_txt_trans" />
+
+    <TextView
+        android:id="@+id/activity_main_dialog_txt_trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="환승역"
+        android:textColor="@color/anza_blue"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_dialog_txt_title" />
+
+    <TextView
+        android:id="@+id/activity_main_dialog_txt_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도착역"
+        android:textColor="@color/anza_blue"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_dialog_txt_trans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_main_dialog_txt_trans"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_dialog_txt_trans" />
+
+    <ImageButton
+        android:id="@+id/activity_main_dialog_btn_x"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/transparent"
+        android:padding="3dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_main_dialog_txt_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_dialog_txt_title"
+        app:srcCompat="@drawable/activity_main_dialog_x" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/anza_light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_dialog_txt_trans" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/anza_light_gray"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_dialog_btn_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <Button
+        android:id="@+id/activity_main_dialog_btn_select"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@drawable/activity_main_dialog_btn_select_background"
+        android:backgroundTint="@color/anza_gray_2"
+        android:text="완료"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

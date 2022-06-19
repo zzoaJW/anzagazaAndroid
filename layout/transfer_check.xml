@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0EDFF">
+
+    <TextView
+        android:id="@+id/transfer_check_station_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="90dp"
+        android:text="00역"
+        android:textColor="@color/anza_string_default"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/transfer_check_txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="에서"
+        android:textColor="@color/anza_string_default"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/transfer_check_station_name"
+        app:layout_constraintStart_toEndOf="@+id/transfer_check_station_name"
+        app:layout_constraintTop_toTopOf="@+id/transfer_check_station_name" />
+
+    <TextView
+        android:id="@+id/transfer_check_txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="환승 잘 하셨나요?"
+        android:textColor="@color/anza_string_default"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/transfer_check_station_name"
+        app:layout_constraintTop_toBottomOf="@+id/transfer_check_station_name" />
+
+    <Button
+        android:id="@+id/transfer_check_btn_yes"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/anza_blue"
+        android:text="잘 탔어요"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/transfer_check_station_name"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <Button
+        android:id="@+id/transfer_check_btn_no"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_background"
+        android:text="다음 열차 탈래요"
+        android:textColor="@color/anza_dark_gray"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/transfer_check_btn_yes" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transfer_check_txt2"
+        app:srcCompat="@drawable/transfer_check_img" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/transfer_check_btn_yes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/transfer_check_btn_yes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
