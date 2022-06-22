@@ -2,7 +2,10 @@ package com.z0o0a.anzagaza
 
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.z0o0a.anzagaza.databinding.SearchStationBinding
 
@@ -15,12 +18,24 @@ class SearchStation : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        // 작동 외않되
+        // setVisibleClearBtn(binding.searchStationBtnClear, binding.searchStationEdittext)
 
         binding.searchStationBtnBack.setOnClickListener {
             finish()
         }
 
         setListenerToEditText()
+
+        binding.searchStationBtnHosun.setOnClickListener {
+            val searchStationBottomDialog = SearchStationBottomDialog()
+            searchStationBottomDialog.show(supportFragmentManager, searchStationBottomDialog.tag)
+
+        }
+
+        binding.searchStationBtnClear.setOnClickListener {
+            editTextClear(binding.searchStationEdittext)
+        }
 
     }
 
@@ -38,5 +53,18 @@ class SearchStation : AppCompatActivity() {
 
             false
         }
+    }
+
+    // 손 봐줘야함
+    fun setVisibleClearBtn(btn:ImageButton, txt: EditText) {
+        if (txt.getText()==null) {
+            btn.setVisibility(View.GONE)
+        } else {
+            btn.setVisibility(View.VISIBLE)
+        }
+    }
+
+    fun editTextClear(txt: EditText) {
+        txt.setText(null)
     }
 }

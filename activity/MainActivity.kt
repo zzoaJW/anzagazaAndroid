@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(), ActivityMainDialogInterface {
         val view = binding.root
         setContentView(view)
 
-        binding.activityMainRouteMap.setImageResource(R.drawable.route_map_220528)
+        binding.activityMainRouteMap.setImageResource(R.drawable.route_map_220623)
 
         binding.activityMainOverlayout.setVisibility(View.VISIBLE)
 

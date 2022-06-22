@@ -24,6 +24,9 @@ class CurrentBoarding : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
+
     }
 
 }
