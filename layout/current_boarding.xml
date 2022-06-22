@@ -1,28 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/searchbar_background">
+    android:background="@drawable/searchbar_background"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/current_boarding_btn_create"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/anza_blue"
+        android:text="알림 생성 완료"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_radio_group" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="50dp"
         android:text="환승확인화면"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/anza_gray_4"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_btn_create" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:text="완료화면"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColor="@color/anza_gray_4"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+        <ImageButton
+            android:id="@+id/imageView4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_back" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_push_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:text="푸시알람 설정"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_more2" />
+
+    <RadioGroup
+        android:id="@+id/current_boarding_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_btn_create"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_txt_push_alarm"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_txt_push_alarm">
+
+        <RadioButton
+            android:id="@+id/current_boarding_radio_btn_v"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/anza_string_default"
+            android:checked="true"
+            android:paddingVertical="24dp"
+            android:text="진동"
+            android:textColor="@color/anza_string_default"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="111dp"
+            tools:layout_editor_absoluteY="169dp" />
+
+        <RadioButton
+            android:id="@+id/current_boarding_radio_btn_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/anza_string_default"
+            android:checked="false"
+            android:paddingVertical="24dp"
+            android:text="소리"
+            android:textColor="@color/anza_string_default"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="220dp" />
+
+        <RadioButton
+            android:id="@+id/current_boarding_radio_btn_n"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/anza_string_default"
+            android:checked="false"
+            android:paddingVertical="24dp"
+            android:text="무음"
+            android:textColor="@color/anza_string_default"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="294dp" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/current_boarding_img_line_start"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_more"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_more"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_more"
+        app:srcCompat="@drawable/line_circle" />
+
+    <ImageView
+        android:id="@+id/current_boarding_img_line_end"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_line_2"
+        app:srcCompat="@drawable/line_circle" />
+
+    <ImageView
+        android:id="@+id/current_boarding_img_line_trans"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_trans_station"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_line_1"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_line_1"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_trans_station"
+        app:srcCompat="@drawable/line_circle" />
+
+    <ImageView
+        android:id="@+id/current_boarding_img_more"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:tint="@color/anza_gray_2"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/current_boarding_img_more" />
+
+    <ImageView
+        android:id="@+id/current_boarding_img_more2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/anza_gray_2"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_end"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_end"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_line_end"
+        app:srcCompat="@drawable/current_boarding_img_more" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_start_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="역 승차"
+        android:textStyle="bold"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_start_station"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_start_station"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_start_station" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_trans_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="역 환승"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_trans_station"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_trans_station"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_trans_station"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_end_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="역 하차"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_end_station"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_end_station"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_end_station"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/current_boarding_start_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="00"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_start" />
+
+    <TextView
+        android:id="@+id/current_boarding_trans_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:text="00"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_start_station"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_start_station" />
+
+    <TextView
+        android:id="@+id/current_boarding_end_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="00"
+        android:textColor="@color/anza_string_default"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_end"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_start_station"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_end" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_start_station_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="역 방면"
+        android:textColor="@color/anza_dark_gray"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_start_station_direction"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_start_station_direction"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_start_station_direction" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_trans_station_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="역 방면"
+        android:textColor="@color/anza_dark_gray"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_trans_station_direction"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_trans_station_direction"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_trans_station_direction"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/current_boarding_start_station_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="00"
+        android:textColor="@color/anza_dark_gray"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_start_station"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_txt_start_station" />
+
+    <TextView
+        android:id="@+id/current_boarding_trans_station_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="00"
+        android:textColor="@color/anza_dark_gray"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_trans_station"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_txt_trans_station" />
+
+    <ImageView
+        android:id="@+id/current_boarding_line_1"
+        android:layout_width="5dp"
+        android:layout_height="180dp"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_line_start"
+        app:srcCompat="@drawable/line_square" />
+
+    <ImageView
+        android:id="@+id/current_boarding_line_2"
+        android:layout_width="5dp"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_line_1"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_line_1"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_line_1"
+        app:srcCompat="@drawable/line_square" />
+
+    <TextView
+        android:id="@+id/current_boarding_line_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_start"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_start" />
+
+    <TextView
+        android:id="@+id/current_boarding_line_trans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_trans"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_trans"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_trans"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_trans" />
+
+    <TextView
+        android:id="@+id/current_boarding_txt_line_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하차"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_end"
+        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_end"
+        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_end"
+        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_end" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
