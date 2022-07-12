@@ -11,7 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <Button
+        <ImageView
+            android:id="@+id/current_boarding_line_1"
+            android:layout_width="5dp"
+            android:layout_height="180dp"
+            app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_start"
+            app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_start"
+            app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_line_start"
+            app:srcCompat="@drawable/line_square" />
+
+        <ImageView
+            android:id="@+id/current_boarding_line_2"
+            android:layout_width="5dp"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="@+id/current_boarding_line_1"
+            app:layout_constraintStart_toStartOf="@+id/current_boarding_line_1"
+            app:layout_constraintTop_toBottomOf="@+id/current_boarding_line_1"
+            app:srcCompat="@drawable/line_square" />
+
+        <Button
         android:id="@+id/current_boarding_btn_create"
         android:layout_width="0dp"
         android:layout_height="54dp"
@@ -51,7 +69,7 @@
         app:layout_constraintTop_toTopOf="@+id/button" />
 
         <ImageButton
-            android:id="@+id/imageView4"
+            android:id="@+id/current_boarding_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
@@ -133,7 +151,7 @@
         app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_more"
         app:layout_constraintStart_toStartOf="@+id/current_boarding_img_more"
         app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_more"
-        app:srcCompat="@drawable/line_circle" />
+        app:srcCompat="@drawable/circle_line_1" />
 
     <ImageView
         android:id="@+id/current_boarding_img_line_end"
@@ -153,7 +171,7 @@
         app:layout_constraintEnd_toEndOf="@+id/current_boarding_line_1"
         app:layout_constraintStart_toStartOf="@+id/current_boarding_line_1"
         app:layout_constraintTop_toTopOf="@+id/current_boarding_trans_station"
-        app:srcCompat="@drawable/line_circle" />
+        app:srcCompat="@drawable/circle_line_7" />
 
     <ImageView
         android:id="@+id/current_boarding_img_more"
@@ -161,8 +179,8 @@
         android:layout_height="25dp"
         android:layout_marginTop="20dp"
         android:tint="@color/anza_gray_2"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/current_boarding_back"
+        app:layout_constraintTop_toBottomOf="@+id/current_boarding_back"
         app:srcCompat="@drawable/current_boarding_img_more" />
 
     <ImageView
@@ -296,53 +314,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/current_boarding_trans_station"
         app:layout_constraintStart_toEndOf="@+id/current_boarding_txt_trans_station" />
 
-    <ImageView
-        android:id="@+id/current_boarding_line_1"
-        android:layout_width="5dp"
-        android:layout_height="180dp"
-        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_start"
-        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_start"
-        app:layout_constraintTop_toBottomOf="@+id/current_boarding_img_line_start"
-        app:srcCompat="@drawable/line_square" />
-
-    <ImageView
-        android:id="@+id/current_boarding_line_2"
-        android:layout_width="5dp"
-        android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="@+id/current_boarding_line_1"
-        app:layout_constraintStart_toStartOf="@+id/current_boarding_line_1"
-        app:layout_constraintTop_toBottomOf="@+id/current_boarding_line_1"
-        app:srcCompat="@drawable/line_square" />
-
-    <TextView
-        android:id="@+id/current_boarding_line_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_start"
-        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_start"
-        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_start"
-        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_start" />
-
-    <TextView
-        android:id="@+id/current_boarding_line_trans"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/current_boarding_img_line_trans"
-        app:layout_constraintEnd_toEndOf="@+id/current_boarding_img_line_trans"
-        app:layout_constraintStart_toStartOf="@+id/current_boarding_img_line_trans"
-        app:layout_constraintTop_toTopOf="@+id/current_boarding_img_line_trans" />
-
-    <TextView
+        <TextView
         android:id="@+id/current_boarding_txt_line_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

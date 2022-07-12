@@ -36,7 +36,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="환승역"
         android:textColor="@color/anza_blue"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
